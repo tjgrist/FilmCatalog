@@ -2,7 +2,7 @@
 Console application with the following items:
 
 View
--	Prints out the various Genres and their Titles
+-	Prints out the various Genres and their Titles ***
 
 Title
 -	Name field
@@ -25,7 +25,7 @@ Movie (Inherits from Title)
 
 Genre
 -	Contains a list of Titles
--	Implement custom iterator to iterate over those Titles
+-	Implement custom iterator to iterate over those Titles ***
 -	Overload plus (+) operator to take in two Genres and return the aggregated Genre. 
 		o	For example, if we want to create an aggregated genre Romantic Comedy, all the film titles in that specific genre would include film titles from Romance and film titles from Comedy.
 -	Overload plus (+) operator to take in a Genre and a Title to return the aggregated Genre. 

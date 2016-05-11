@@ -8,5 +8,11 @@ namespace FilmCatalogue
 {
     class Action : Title
     {
+        public Action(string name, int length, double rating)
+        {
+            this.name = name;
+            this.length = length;
+            this.rating = rating;
+        }
     }
 }

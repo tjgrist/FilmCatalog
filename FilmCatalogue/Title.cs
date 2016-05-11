@@ -18,6 +18,12 @@ namespace FilmCatalogue
 
         public List<Comedy> ComedyTitles{ get { return comedyTitles; } }
 
+        public void setTitles()
+        {
+            setComedyTitles();
+            setActionTitles();
+            setRomanceTitles();
+        }
         public void setComedyTitles()
         {
             Comedy comedy1 = new Comedy("Airplane", 120, 4.5);
@@ -30,7 +36,14 @@ namespace FilmCatalogue
             comedyTitles.Add(comedy3);
             comedyTitles.Add(comedy4);
             comedyTitles.Add(comedy5);
-
+        }
+        private void setActionTitles()
+        {
+            Action action1 = new Action("Die Hard", 145, 4.6);
+        }
+        private void setRomanceTitles()
+        {
+            Romance romance1 = new Romance("The Notebook", 200, 3.9);
         }
     }
 }
