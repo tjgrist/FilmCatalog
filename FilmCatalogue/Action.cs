@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FilmCatalogue
 {
-    class ComedyGenre
+    class Action
     {
     }
 }

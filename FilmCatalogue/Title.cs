@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace FilmCatalogue
 {
-    class Film
+    abstract class Title
     {
-
+        protected string title;
+        protected int length;
+        protected double rating;
     }
 }

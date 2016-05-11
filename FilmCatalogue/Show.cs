@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace FilmCatalogue
 {
-    class Film
+    class Show : Title
     {
-
     }
 }
