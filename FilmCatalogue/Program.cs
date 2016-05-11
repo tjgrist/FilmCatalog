@@ -10,6 +10,9 @@ namespace FilmCatalogue
     {
         static void Main(string[] args)
         {
+            Catalog catalog = new Catalog();
+            catalog.viewGenreTitles();
+            Console.ReadKey();
         }
     }
 }

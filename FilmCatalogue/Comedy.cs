@@ -7,17 +7,14 @@ using System.Collections;
 
 namespace FilmCatalogue
 {
-    class Comedy : Title, IEnumerable
+    class Comedy : Title
     {
-        public List<Comedy> comedies = new List<Comedy>();
-
-        public IEnumerator GetEnumerator()
+        public Comedy(string name, int length, double rating)
         {
-            foreach (Comedy comedy in comedies)
-            {
-                yield return comedy.title;
-                yield return comedy.length;
-            }
+            this.name = name;
+            this.length = length;
+            this.rating = rating;
         }
+
     }
 }

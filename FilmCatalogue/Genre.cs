@@ -9,10 +9,28 @@ namespace FilmCatalogue
 {
     class Genre : IEnumerable
     {
-        
+        Title title = new Title();
         public IEnumerator GetEnumerator()
         {
-            foreach ()
+            title.setComedyTitles();
+            foreach(Comedy c in title.ComedyTitles)
+            {
+                yield return c.name;
+                yield return "Duration: " + c.length;
+                yield return "Rating: " + c.rating + "\n";
+            }
+            foreach(Action a in title.actionTitles)
+            {
+                yield return a.name;
+                yield return "Duration: " + a.length;
+                yield return "Rating: " + a.rating + "\n";
+            }
+            foreach (Romance r in title.romanceTitles)
+            {
+                yield return r.name;
+                yield return "Duration: " + r.length;
+                yield return "Rating: " + r.rating + "\n";
+            }
         }
     }
 }

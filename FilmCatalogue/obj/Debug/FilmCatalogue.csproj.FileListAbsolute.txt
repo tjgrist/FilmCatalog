@@ -1,2 +1,6 @@
 C:\Users\tjgrs\projects\visualstudio\FilmCatalogue\FilmCatalogue\bin\Debug\FilmCatalogue.exe.config
 C:\Users\tjgrs\projects\visualstudio\FilmCatalogue\FilmCatalogue\obj\Debug\FilmCatalogue.csprojResolveAssemblyReference.cache
+C:\Users\tjgrs\projects\visualstudio\FilmCatalogue\FilmCatalogue\bin\Debug\FilmCatalogue.exe
+C:\Users\tjgrs\projects\visualstudio\FilmCatalogue\FilmCatalogue\bin\Debug\FilmCatalogue.pdb
+C:\Users\tjgrs\projects\visualstudio\FilmCatalogue\FilmCatalogue\obj\Debug\FilmCatalogue.exe
+C:\Users\tjgrs\projects\visualstudio\FilmCatalogue\FilmCatalogue\obj\Debug\FilmCatalogue.pdb
