@@ -14,7 +14,12 @@ namespace FilmCatalogue
         {
             foreach (var g in genreList)
             {
-                yield return g.name;
+                yield return "___" + g.name + "___";
+                foreach(Title t in g.genreTitles)
+                {
+                    yield return t.ToString();
+                    yield return "Rating: " + t.Rating + "\n";
+                }
             }
             Console.WriteLine();
         }
@@ -30,18 +35,7 @@ namespace FilmCatalogue
             genreList.Add(allGenres);
             Console.WriteLine("Genres set. All titles count: " + allGenres.genreTitles.Count + "\n");
         }
-        public void viewGenreTitles()
-        {
-            foreach (Genre g in genreList)
-            {
-                Console.WriteLine("Genre: " + g.name);
-                foreach(Title t in g.genreTitles)
-                {
-                    Console.WriteLine(t.name);
-                    Console.WriteLine("Rating: " + t.rating + "\n");
-                }
-            }
-        }
+  
         public void makeNewGenre(string name, int Index1, int Index2)
         {
             Genre newGenre = genreList[Index1] + genreList[Index2];

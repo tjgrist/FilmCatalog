@@ -15,10 +15,7 @@ namespace FilmCatalogue
             this.rating = rating;
             episodesList = episodes;
         }
-        public Show()
-        {
-
-        }
+        public Show() {}
         public override double Rating
         {
             set

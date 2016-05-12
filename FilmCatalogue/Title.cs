@@ -9,7 +9,7 @@ namespace FilmCatalogue
     public abstract class Title
     {
         public string name;
-        public double ?rating;
+        protected double ?rating;
 
         public Title(string name, double rating)
         {

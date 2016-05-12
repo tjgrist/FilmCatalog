@@ -19,7 +19,6 @@ namespace FilmCatalogue
                 Console.WriteLine(c);
             }
             
-            catalog.viewGenreTitles();
             Console.WriteLine("<<<<<<<<<<<<<< making new genre >>>>>>>>>>>>>");
             Console.ReadKey();
             catalog.makeNewGenre("Action Comedy", 0, 1);
