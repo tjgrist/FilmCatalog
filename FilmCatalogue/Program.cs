@@ -31,11 +31,11 @@ namespace FilmCatalogue
             //catalog.addTitleToGenre(catalog.genreList[2], catalog.genreList[1]);
             //catalog.viewGenreTitles();
             //Console.ReadKey();
-            catalog.aggregateTitles();
-            foreach (var c in catalog)
-            {
-                Console.WriteLine(c);
-            }
+            //catalog.aggregateTitles();
+            //foreach (var c in catalog)
+            //{
+            //    Console.WriteLine(c);
+            //}
             Console.ReadKey();
         }
     }

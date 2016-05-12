@@ -22,8 +22,9 @@ namespace FilmCatalogue
         {
             foreach(Title t in genreTitles)
             {
-                yield return t.name;
-                yield return "Rating: " + t.rating + "\n";
+                yield return t.ToString(); //name and length or name and episode count
+                yield return "Rating: " + t.Rating;          
+                yield return t.GetType() + "\n";       
             }
         }
         public static Genre operator +(Genre genre1, Genre genre2)

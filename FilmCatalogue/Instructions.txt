@@ -9,19 +9,19 @@ Title
 -	Rating field ** 
 -	Overload plus (+) operator to take in two Titles and return an aggregated Genre **
 -	Offer two overloaded constructors: one that takes in all the fields and sets them, **
-another that takes in no fields and sets the internal fields to null.
+another that takes in no fields and sets the internal fields to null. **
 
 Show (inherits from Title)
--	Contains a list of Episodes
--	Overrides parent’s Rating to return an aggregated rating of Episode ratings
--	Overrides ToString() method to return a string of the name of the show and number of episodes
+-	Contains a list of Episodes ***
+-	Overrides parent’s Rating to return an aggregated rating of Episode ratings ***
+-	Overrides ToString() method to return a string of the name of the show and number of episodes ***
 
 Episode
--	Rating field
+-	Rating field ***
 
 Movie (Inherits from Title)
--	Duration field
--	Overrides ToString() method to return a string of the name and duration of the movie
+-	Duration field ***
+-	Overrides ToString() method to return a string of the name and duration of the movie ***
 
 Genre
 -	Contains a list of Titles ***

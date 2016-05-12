@@ -5,7 +5,12 @@ using System.Text;
 
 namespace FilmCatalogue
 {
-    public class Episodes
+    public class Episodes : Show
     {
+        public Episodes(double rating)
+        {
+            this.rating = rating;
+
+        }
     }
 }

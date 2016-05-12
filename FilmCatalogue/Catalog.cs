@@ -68,86 +68,77 @@ namespace FilmCatalogue
         }
         public List<Title> getComedyTitles()
         {
+            Show show = new Show();
             List<Title> comedyTitles = new List<Title>();
-            Title comedy1 = new Title("Airplane", 4.5);
-            Title comedy2 = new Title("Monty Python", 4.7);
-            Title comedy3 = new Title("Anchorman", 4.6);
-            Title comedy4 = new Title("Ace Ventura", 4.8);
-            Title comedy5 = new Title("Hot Tub Time Machine", 3.5);
+            Title comedy1 = new Film("Airplane", 120, 4.5);
+            Title comedy2 = new Film("Monty Python", 130, 4.7);
+            Title comedy3 = new Film("Anchorman", 115, 4.6);
+            Title comedy4 = new Film("Ace Ventura", 140, 4.8);
+            Title comedy5 = new Film("Hot Tub Time Machine", 137, 3.5);
+            Title comedy6 = new Show("Always Sunny in Philadelphia", 4.5, show.getEpisodesList("sunny"));
+            Title comedy7 = new Show("Archer", 4.2, show.getEpisodesList("archer"));
             comedyTitles.Add(comedy1);
             comedyTitles.Add(comedy2);
             comedyTitles.Add(comedy3);
             comedyTitles.Add(comedy4);
             comedyTitles.Add(comedy5);
+            comedyTitles.Add(comedy6);
+            comedyTitles.Add(comedy7);
             return comedyTitles;
         }
         private List<Title> getActionTitles()
         {
+            Show show = new Show();
             List<Title> actionTitles = new List<Title>();
-            Title action1 = new Title("Die Hard", 4.6);
-            Title action2 = new Title("Rambo", 3.5);
-            Title action3 = new Title("Predator",  4.1);
-            Title action4 = new Title("Avengers", 3.3);
-            Title action5 = new Title("Star Wars", 5.0);
+            Title action1 = new Film("Die Hard", 130, 4.6);
+            Title action2 = new Film("Rambo", 140, 3.5);
+            Title action3 = new Film("Predator", 150, 4.1);
+            Title action4 = new Film("Avengers", 110, 3.3);
+            Title action5 = new Film("Star Wars", 115, 5.0);
+            Title action6 = new Show("Heroes", 4.5, show.getEpisodesList("heroes"));
             actionTitles.Add(action1);
             actionTitles.Add(action2);
             actionTitles.Add(action3);
             actionTitles.Add(action4);
             actionTitles.Add(action5);
+            actionTitles.Add(action6);
             return actionTitles;
         }
         private List<Title> getRomanceTitles()
         {
+            Show show = new Show();
             List<Title> romanceTitles = new List<Title>();
-            Title romance1 = new Title("The Notebook", 3.9);
-            Title romance2 = new Title("Titanic", 4.5);
-            Title romance3 = new Title("Annie Hall", 4.2);
-            Title romance4 = new Title("Moonrise Kingdom",  3.3);
-            Title romance5 = new Title("Casablanca", 3.6);
-            Title romance6 = new Title("Punch Drunk Love", 3.9);
+            Title romance1 = new Film("The Notebook", 120, 3.9);
+            Title romance2 = new Film("Titanic", 150, 4.5);
+            Title romance3 = new Film("Annie Hall", 160, 4.2);
+            Title romance4 = new Film("Moonrise Kingdom", 140, 3.3);
+            Title romance5 = new Film("Casablanca", 136, 3.6);
+            Title romance6 = new Film("Punch Drunk Love", 150, 3.9);
+            Title romance7 = new Show("Bones", 4.0, show.getEpisodesList("bones"));
             romanceTitles.Add(romance1);
             romanceTitles.Add(romance2);
             romanceTitles.Add(romance3);
             romanceTitles.Add(romance4);
             romanceTitles.Add(romance5);
             romanceTitles.Add(romance6);
+            romanceTitles.Add(romance7);
             return romanceTitles;
         }
         public List<Title> getAllTitles()
         {
             List<Title> allTitles = new List<Title>();
-            Title romance1 = new Title("The Notebook",  3.9);
-            Title romance2 = new Title("Titanic",  4.5);
-            Title romance3 = new Title("Annie Hall",  4.2);
-            Title romance4 = new Title("Moonrise Kingdom", 3.3);
-            Title romance5 = new Title("Casablanca",  3.6);
-            Title romance6 = new Title("Punch Drunk Love",  3.9);
-            Title action1 = new Title("Die Hard",  4.6);
-            Title action2 = new Title("Rambo", 3.5);
-            Title action3 = new Title("Predator",  4.1);
-            Title action4 = new Title("Avengers",  3.3);
-            Title action5 = new Title("Star Wars", 4.5);
-            Title comedy1 = new Title("Airplane", 4.4);
-            Title comedy2 = new Title("Monty Python",  4.7);
-            Title comedy3 = new Title("Anchorman",  4.6);
-            Title comedy4 = new Title("Ace Ventura",  4.8);
-            Title comedy5 = new Title("Hot Tub Time Machine", 3.5);
-            allTitles.Add(romance1);
-            allTitles.Add(romance2);
-            allTitles.Add(romance3);
-            allTitles.Add(romance4);
-            allTitles.Add(romance5);
-            allTitles.Add(romance5);
-            allTitles.Add(action1);
-            allTitles.Add(action2);
-            allTitles.Add(action3);
-            allTitles.Add(action4);
-            allTitles.Add(action5);
-            allTitles.Add(comedy1);
-            allTitles.Add(comedy2);
-            allTitles.Add(comedy3);
-            allTitles.Add(comedy4);
-            allTitles.Add(comedy5);
+            foreach(Title c in getComedyTitles())
+            {
+                allTitles.Add(c);
+            }
+            foreach(Title a in getActionTitles())
+            {
+                allTitles.Add(a);
+            }
+            foreach(Title r in getRomanceTitles())
+            {
+                allTitles.Add(r);
+            }
             return allTitles;
         }
     }
