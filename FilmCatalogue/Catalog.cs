@@ -12,7 +12,7 @@ namespace FilmCatalogue
 
         public IEnumerator GetEnumerator()
         {
-            foreach (var g in genreList)
+            foreach (Genre g in genreList)
             {
                 yield return "___" + g.name + "___";
                 foreach(Title t in g.genreTitles)
@@ -33,11 +33,19 @@ namespace FilmCatalogue
             genreList.Add(romance);
             genreList.Add(allGenres);
             Console.WriteLine("Genres set. Titles available: " + allGenres.genreTitles.Count + "\n");
+            viewGenres();
         }
-  
-        public void makeNewGenre(string name, int Index1, int Index2)
+        public void viewGenres()
         {
-            Genre newGenre = genreList[Index1] + genreList[Index2];
+            Console.WriteLine("Genres available:");
+            foreach(Genre g in genreList)
+            {
+                Console.WriteLine(g.name);
+            }
+        }
+        public void makeNewGenre(string name, int index1, int index2)
+        {
+            Genre newGenre = genreList[index1] + genreList[index2];
             genreList.Add(newGenre);
             viewNewGenre(newGenre);
         }
@@ -59,6 +67,7 @@ namespace FilmCatalogue
             Genre customGenre = genreList[1].genreTitles[0] + genreList[0].genreTitles[3];
             genreList.Add(customGenre);
             viewNewGenre(customGenre);
+            viewGenres();
         }
         public List<Title> getComedyTitles()
         {

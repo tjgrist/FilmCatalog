@@ -11,17 +11,16 @@ namespace FilmCatalogue
         static void Main(string[] args)
         {
             Catalog catalog = new Catalog();
-
             catalog.setGenres();
-
+            Console.ReadKey();
             foreach (var c in catalog)
             {
                 Console.WriteLine(c);
-            }
-            
-            Console.WriteLine("<<<<<<<<<<<<<< making new genre >>>>>>>>>>>>>");
+            }          
+            Console.WriteLine("<<<<<<<<<<<<<< make a new genre >>>>>>>>>>>>>");
             Console.ReadKey();
             catalog.makeNewGenre("Action Comedy", 0, 1);
+            Console.ReadKey();
             foreach (var c in catalog)
             {
                 Console.WriteLine(c);

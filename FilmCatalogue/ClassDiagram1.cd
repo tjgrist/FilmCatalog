@@ -1,46 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="FilmCatalogue.Action" Collapsed="true">
-    <Position X="3" Y="3.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Action.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="FilmCatalogue.Catalog" Collapsed="true">
     <Position X="5.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAgAAAgAABAAgAAAAAIAAAAAAAQAAAAAAAAAAQg=</HashCode>
+      <HashCode>AAAAAAgAAAgAABAAgARAAAIAAAAAAAUAAAAAAAAAIwA=</HashCode>
       <FileName>Catalog.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="FilmCatalogue.Genre" Collapsed="true">
-    <Position X="5.25" Y="2.25" Width="1.5" />
+    <Position X="5.25" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAABAAAAAAAAAAAAAEAAAAQAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAABAAQAAAAAAAAAAEAAAAQAAAAAAAAAA=</HashCode>
       <FileName>Genre.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="FilmCatalogue.Romance" Collapsed="true">
+  <Class Name="FilmCatalogue.Title" Collapsed="true">
     <Position X="5.25" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Romance.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="FilmCatalogue.Comedy" Collapsed="true">
-    <Position X="7.5" Y="3.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Comedy.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="FilmCatalogue.Title" Collapsed="true">
-    <Position X="5.25" Y="5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAQAEAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAQAAAAAAAAQAEAAEAAAAAAAAAAAA=</HashCode>
       <FileName>Title.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -52,10 +31,24 @@
     </TypeIdentifier>
   </Class>
   <Class Name="FilmCatalogue.Episodes" Collapsed="true">
-    <Position X="7.75" Y="8" Width="1.5" />
+    <Position X="7.5" Y="6.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Episodes.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FilmCatalogue.Show" Collapsed="true">
+    <Position X="7.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEACAAAAAAAAAAAAGAAAAAAAAAAAA=</HashCode>
+      <FileName>Show.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FilmCatalogue.Film" Collapsed="true">
+    <Position X="3" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Film.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
