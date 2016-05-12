@@ -38,7 +38,6 @@ namespace FilmCatalogue
                 foreach(Title t in g.genreTitles)
                 {
                     Console.WriteLine(t.name);
-                    Console.WriteLine("Duration: " + t.length);
                     Console.WriteLine("Rating: " + t.rating + "\n");
                 }
             }
@@ -70,11 +69,11 @@ namespace FilmCatalogue
         public List<Title> getComedyTitles()
         {
             List<Title> comedyTitles = new List<Title>();
-            Title comedy1 = new Title("Airplane", 120, 4.5);
-            Title comedy2 = new Title("Monty Python", 130, 4.7);
-            Title comedy3 = new Title("Anchorman", 150, 4.6);
-            Title comedy4 = new Title("Ace Ventura", 110, 4.8);
-            Title comedy5 = new Title("Hot Tub Time Machine", 134, 3.5);
+            Title comedy1 = new Title("Airplane", 4.5);
+            Title comedy2 = new Title("Monty Python", 4.7);
+            Title comedy3 = new Title("Anchorman", 4.6);
+            Title comedy4 = new Title("Ace Ventura", 4.8);
+            Title comedy5 = new Title("Hot Tub Time Machine", 3.5);
             comedyTitles.Add(comedy1);
             comedyTitles.Add(comedy2);
             comedyTitles.Add(comedy3);
@@ -85,11 +84,11 @@ namespace FilmCatalogue
         private List<Title> getActionTitles()
         {
             List<Title> actionTitles = new List<Title>();
-            Title action1 = new Title("Die Hard", 145, 4.6);
-            Title action2 = new Title("Rambo", 123, 3.5);
-            Title action3 = new Title("Predator", 170, 4.1);
-            Title action4 = new Title("Avengers", 126, 3.3);
-            Title action5 = new Title("Star Wars", 150, 5.0);
+            Title action1 = new Title("Die Hard", 4.6);
+            Title action2 = new Title("Rambo", 3.5);
+            Title action3 = new Title("Predator",  4.1);
+            Title action4 = new Title("Avengers", 3.3);
+            Title action5 = new Title("Star Wars", 5.0);
             actionTitles.Add(action1);
             actionTitles.Add(action2);
             actionTitles.Add(action3);
@@ -100,12 +99,12 @@ namespace FilmCatalogue
         private List<Title> getRomanceTitles()
         {
             List<Title> romanceTitles = new List<Title>();
-            Title romance1 = new Title("The Notebook", 160, 3.9);
-            Title romance2 = new Title("Titanic", 180, 4.5);
-            Title romance3 = new Title("Annie Hall", 130, 4.2);
-            Title romance4 = new Title("Moonrise Kingdom", 140, 3.3);
-            Title romance5 = new Title("Casablanca", 127, 3.6);
-            Title romance6 = new Title("Punch Drunk Love", 136, 3.9);
+            Title romance1 = new Title("The Notebook", 3.9);
+            Title romance2 = new Title("Titanic", 4.5);
+            Title romance3 = new Title("Annie Hall", 4.2);
+            Title romance4 = new Title("Moonrise Kingdom",  3.3);
+            Title romance5 = new Title("Casablanca", 3.6);
+            Title romance6 = new Title("Punch Drunk Love", 3.9);
             romanceTitles.Add(romance1);
             romanceTitles.Add(romance2);
             romanceTitles.Add(romance3);
@@ -117,22 +116,22 @@ namespace FilmCatalogue
         public List<Title> getAllTitles()
         {
             List<Title> allTitles = new List<Title>();
-            Title romance1 = new Title("The Notebook", 160, 3.9);
-            Title romance2 = new Title("Titanic", 180, 4.5);
-            Title romance3 = new Title("Annie Hall", 130, 4.2);
-            Title romance4 = new Title("Moonrise Kingdom", 140, 3.3);
-            Title romance5 = new Title("Casablanca", 127, 3.6);
-            Title romance6 = new Title("Punch Drunk Love", 136, 3.9);
-            Title action1 = new Title("Die Hard", 145, 4.6);
-            Title action2 = new Title("Rambo", 123, 3.5);
-            Title action3 = new Title("Predator", 170, 4.1);
-            Title action4 = new Title("Avengers", 126, 3.3);
-            Title action5 = new Title("Star Wars", 150, 5.0);
-            Title comedy1 = new Title("Airplane", 120, 4.5);
-            Title comedy2 = new Title("Monty Python", 130, 4.7);
-            Title comedy3 = new Title("Anchorman", 150, 4.6);
-            Title comedy4 = new Title("Ace Ventura", 110, 4.8);
-            Title comedy5 = new Title("Hot Tub Time Machine", 134, 3.5);
+            Title romance1 = new Title("The Notebook",  3.9);
+            Title romance2 = new Title("Titanic",  4.5);
+            Title romance3 = new Title("Annie Hall",  4.2);
+            Title romance4 = new Title("Moonrise Kingdom", 3.3);
+            Title romance5 = new Title("Casablanca",  3.6);
+            Title romance6 = new Title("Punch Drunk Love",  3.9);
+            Title action1 = new Title("Die Hard",  4.6);
+            Title action2 = new Title("Rambo", 3.5);
+            Title action3 = new Title("Predator",  4.1);
+            Title action4 = new Title("Avengers",  3.3);
+            Title action5 = new Title("Star Wars", 4.5);
+            Title comedy1 = new Title("Airplane", 4.4);
+            Title comedy2 = new Title("Monty Python",  4.7);
+            Title comedy3 = new Title("Anchorman",  4.6);
+            Title comedy4 = new Title("Ace Ventura",  4.8);
+            Title comedy5 = new Title("Hot Tub Time Machine", 3.5);
             allTitles.Add(romance1);
             allTitles.Add(romance2);
             allTitles.Add(romance3);

@@ -6,12 +6,20 @@ using System.Threading.Tasks;
 
 namespace FilmCatalogue
 {
-    //public class Film : Title
-    //{
-    //    public Film(string name, int i, double rating)
-    //    {
-    //        name = name;
-    //    }
+    public class Film : Title
+    {
+        public int? length;
+        public Film(string name, int length, double rating)
+        {
+            this.name = name;
+            this.length = length;
+            this.rating = rating;
+        }
+        public override string ToString()
+        {
+            //return name and duration as string;
+            return name + " " + length;
+        }
 
-    //}
+    }
 }

@@ -9,16 +9,18 @@ namespace FilmCatalogue
     public class Title
     {
         public string name;
-        public int length;
-        public double rating;
+        public double ?rating;
 
-        public Title(string name, int length, double rating)
+        public Title(string name, double rating)
         {
             this.name = name;
-            this.length = length;
             this.rating = rating;
         }
-
+        public Title()
+        {
+            name = null;
+            rating = null;
+        }
         public static Genre operator +(Title title1, Title title2)
         {
             List<Title> newTitleList = new List<Title>() { title1, title2 };

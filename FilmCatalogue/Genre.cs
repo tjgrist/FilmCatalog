@@ -23,7 +23,6 @@ namespace FilmCatalogue
             foreach(Title t in genreTitles)
             {
                 yield return t.name;
-                yield return "Duration: " + t.length;
                 yield return "Rating: " + t.rating + "\n";
             }
         }
