@@ -10,21 +10,15 @@
   <Class Name="FilmCatalogue.Catalog" Collapsed="true">
     <Position X="5.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAg=</HashCode>
+      <HashCode>AAAAAAgAAAgAABAAgAAAAAIAAAAAAAQAAAAAAAAAAQg=</HashCode>
       <FileName>Catalog.cs</FileName>
     </TypeIdentifier>
-  </Class>
-  <Class Name="FilmCatalogue.Film" Collapsed="true">
-    <Position X="2.75" Y="6.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Film.cs</FileName>
-    </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="FilmCatalogue.Genre" Collapsed="true">
     <Position X="5.25" Y="2.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAQAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAABAAAAAAAAAAAAAEAAAAQAAAAAAAAAA=</HashCode>
       <FileName>Genre.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -46,15 +40,8 @@
   <Class Name="FilmCatalogue.Title" Collapsed="true">
     <Position X="5.25" Y="5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAABAAgAAAAAEAAAAAAIQAkAAAAAQAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAQAEAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Title.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="FilmCatalogue.Show" Collapsed="true">
-    <Position X="7.5" Y="6.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Show.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="FilmCatalogue.User" Collapsed="true">

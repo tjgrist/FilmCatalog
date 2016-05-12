@@ -2,7 +2,7 @@
 Console application with the following items:
 
 View
--	Prints out the various Genres and their Titles ***
+-	Prints out the various Genres and their Titles 
 
 Title
 -	Name field
@@ -25,13 +25,14 @@ Movie (Inherits from Title)
 
 Genre
 -	Contains a list of Titles
--	Implement custom iterator to iterate over those Titles ***
+-	Implement custom iterator to iterate over those Titles 
 -	Overload plus (+) operator to take in two Genres and return the aggregated Genre. 
 		o	For example, if we want to create an aggregated genre Romantic Comedy, all the film titles in that specific genre would include film titles from Romance and film titles from Comedy.
 -	Overload plus (+) operator to take in a Genre and a Title to return the aggregated Genre. 
 		o	Take in a title, add it to the genre, return an aggregated list. 
 		o	For example, title Die Hard and genre Comedy would return a list of all comedy films and Die Hard.
--	Create the genres: All, Romance, Action, Comedy. They need to share some titles (such as Romantic Comedies) by reference, not by duplicating the title itself.  
+-	Create the genres: All, Romance, Action, Comedy. They need to share some titles (such as Romantic Comedies) by reference, 
+not by duplicating the title itself.  
 
 Other project requirements:
 -	Utilize the null operators we covered in class
@@ -53,3 +54,9 @@ IEnumerable and IEnumerator
 Null operators
 properties
 unit tests
+
+//Make catalog class iterate through the genres
+//should contain list of genres
+//Make Genre class have 
+//Genre class could have lists of titles;
+// Could have Title list instaniated based on its genre

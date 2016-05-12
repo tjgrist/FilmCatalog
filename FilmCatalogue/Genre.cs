@@ -7,33 +7,33 @@ using System.Collections;
 
 namespace FilmCatalogue
 {
-    class Genre : IEnumerable
+    public class Genre : IEnumerable
     {
-        Title title = new Title();
+        public string name;
+        public List<Title> genreTitles;
+
+        public Genre(string name, List<Title> titleList)
+        {
+            this.name = name.ToUpper();
+            genreTitles = titleList;
+        }
+
         public IEnumerator GetEnumerator()
         {
-            title.setComedyTitles();
-            Console.WriteLine("Comedies:");
-            foreach(Comedy c in title.ComedyTitles)
+            foreach(Title t in genreTitles)
             {
-                yield return c.name;
-                yield return "Duration: " + c.length;
-                yield return "Rating: " + c.rating + "\n";
+                yield return t.name;
+                yield return "Duration: " + t.length;
+                yield return "Rating: " + t.rating + "\n";
             }
-            Console.WriteLine("Action:");
-            foreach(Action a in title.actionTitles)
+        }
+        public static Genre operator +(Genre genre1, Genre genre2)
+        {
+            foreach(Title t in genre2.genreTitles)
             {
-                yield return a.name;
-                yield return "Duration: " + a.length;
-                yield return "Rating: " + a.rating + "\n";
+                genre1.genreTitles.Add(t);              
             }
-            Console.WriteLine("Romance:");
-            foreach (Romance r in title.romanceTitles)
-            {
-                yield return r.name;
-                yield return "Duration: " + r.length;
-                yield return "Rating: " + r.rating + "\n";
-            }
+            return genre1;
         }
     }
 }

@@ -6,8 +6,12 @@ using System.Threading.Tasks;
 
 namespace FilmCatalogue
 {
-    class Film : Title
-    {
+    //public class Film : Title
+    //{
+    //    public Film(string name, int i, double rating)
+    //    {
+    //        name = name;
+    //    }
 
-    }
+    //}
 }
