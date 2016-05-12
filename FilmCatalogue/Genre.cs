@@ -29,11 +29,18 @@ namespace FilmCatalogue
         }
         public static Genre operator +(Genre genre1, Genre genre2)
         {
+            string newName = genre1.name + " " + genre2.name;
+            List<Title> newGenreList = genre1.genreTitles;
             foreach(Title t in genre2.genreTitles)
             {
-                genre1.genreTitles.Add(t);              
+                newGenreList.Add(t);              
             }
-            return genre1;
+            return new Genre(newName, newGenreList);
+        }
+        public static List<Title> operator +(Genre genre, Title title)
+        {
+            genre.genreTitles.Add(title);
+            return genre.genreTitles;
         }
     }
 }

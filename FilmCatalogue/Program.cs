@@ -23,6 +23,19 @@ namespace FilmCatalogue
             Console.WriteLine("<<<<<<<<<<<<<< making new genre >>>>>>>>>>>>>");
             Console.ReadKey();
             catalog.makeNewGenre("Action Comedy", 0, 1);
+            foreach (var c in catalog)
+            {
+                Console.WriteLine(c);
+            }
+            Console.ReadKey();
+            //catalog.addTitleToGenre(catalog.genreList[2], catalog.genreList[1]);
+            //catalog.viewGenreTitles();
+            //Console.ReadKey();
+            catalog.aggregateTitles();
+            foreach (var c in catalog)
+            {
+                Console.WriteLine(c);
+            }
             Console.ReadKey();
         }
     }

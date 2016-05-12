@@ -8,7 +8,7 @@ namespace FilmCatalogue
 {
     public class Catalog : IEnumerable
     {
-        List<Genre> genreList = new List<Genre>();
+        public List<Genre> genreList = new List<Genre>();
 
         public IEnumerator GetEnumerator()
         {
@@ -43,10 +43,9 @@ namespace FilmCatalogue
                 }
             }
         }
-        public void makeNewGenre(string name, int genreIndex1, int genreIndex2)
+        public void makeNewGenre(string name, int Index1, int Index2)
         {
-            Genre newGenre = genreList[genreIndex1] + genreList[genreIndex2];
-            newGenre.name = name.ToUpper();
+            Genre newGenre = genreList[Index1] + genreList[Index2];
             genreList.Add(newGenre);
             viewNewGenre(newGenre);
         }
@@ -57,6 +56,16 @@ namespace FilmCatalogue
             {
                 Console.WriteLine(title);
             }
+        }
+        public void addTitleToGenre(Genre genre1, Genre genre2)
+        {
+            genre1.genreTitles = genre1 + genre2.genreTitles[4];
+        }
+        public void aggregateTitles()
+        {
+            Genre customGenre = genreList[1].genreTitles[0] + genreList[0].genreTitles[3];
+            genreList.Add(customGenre);
+            viewNewGenre(customGenre);
         }
         public List<Title> getComedyTitles()
         {

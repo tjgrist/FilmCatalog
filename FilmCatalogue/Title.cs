@@ -18,5 +18,11 @@ namespace FilmCatalogue
             this.length = length;
             this.rating = rating;
         }
+
+        public static Genre operator +(Title title1, Title title2)
+        {
+            List<Title> newTitleList = new List<Title>() { title1, title2 };
+            return new Genre("Custom Genre", newTitleList);
+        }
     }
 }
