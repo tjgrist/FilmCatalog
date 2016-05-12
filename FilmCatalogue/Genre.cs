@@ -22,7 +22,7 @@ namespace FilmCatalogue
         {
             foreach(Title t in genreTitles)
             {
-                yield return t.ToString(); //name and length or name and episode count
+                yield return t.ToString(); //name and length if film, name and episode count if show
                 yield return "Rating: " + t.Rating + "\n";          
             }
         }

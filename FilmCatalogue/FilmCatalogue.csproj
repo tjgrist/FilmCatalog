@@ -44,7 +44,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Catalog.cs" />
-    <Compile Include="Computer.cs" />
     <Compile Include="Episodes.cs" />
     <Compile Include="Film.cs" />
     <Compile Include="Genre.cs" />

@@ -9,7 +9,7 @@ namespace FilmCatalogue
     public abstract class Title
     {
         public string name;
-        protected double ?rating;
+        protected double? rating;
 
         public Title(string name, double rating)
         {
@@ -21,7 +21,13 @@ namespace FilmCatalogue
             name = null;
             rating = null;
         }
-        public virtual double Rating { get { return (double)rating; } set { rating = value; } }
+
+        public virtual double Rating
+        {
+            get { return (double)rating; }
+            set { rating = value; }
+        }
+
         public static Genre operator +(Title title1, Title title2)
         {
             List<Title> newTitleList = new List<Title>() { title1, title2 };

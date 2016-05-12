@@ -8,17 +8,16 @@ namespace FilmCatalogue
 {
     public class Show : Title
     {
-        public List<Episodes> episodesList;
-        public Show(string name, double rating, List<Episodes> episodes)
+        List<Episodes> episodesList;
+        public Show(string name, List<Episodes> episodes)
         {
             this.name = name;
-            this.rating = rating;
             episodesList = episodes;
         }
         public Show() {}
         public override double Rating
         {
-            set
+            get
             {
                 double averageRating = 0;
                 foreach (Episodes e in episodesList)
@@ -26,12 +25,12 @@ namespace FilmCatalogue
                     averageRating += (double)e.rating;
                 }
                 rating = averageRating / episodesList.Count;
-                base.Rating = (double)rating;
+                return (double)rating;
             }
         }
         public override string ToString()
         {
-            return name + ", Episode count: " + episodesList.Count;
+            return name + "\nEpisodes: " + episodesList.Count;
         }
         public List<Episodes> getEpisodesList(string name)
         {
@@ -48,8 +47,8 @@ namespace FilmCatalogue
                     break;
                 case "sunny":
                     Episodes episode4 = new Episodes(3.4);
-                    Episodes episode5 = new Episodes(3.5);
-                    Episodes episode6 = new Episodes(3.6);
+                    Episodes episode5 = new Episodes(4.5);
+                    Episodes episode6 = new Episodes(3.8);
                     episodes.Add(episode4);
                     episodes.Add(episode5);
                     episodes.Add(episode6);
@@ -69,6 +68,14 @@ namespace FilmCatalogue
                     episodes.Add(episode10);
                     episodes.Add(episode11);
                     episodes.Add(episode12);
+                    break;
+                case "city":
+                    Episodes episode13 = new Episodes(3.9);
+                    Episodes episode14 = new Episodes(4.5);
+                    Episodes episode15 = new Episodes(3.2);
+                    episodes.Add(episode13);
+                    episodes.Add(episode14);
+                    episodes.Add(episode15);
                     break;
                 default:
                     break; //will break program;

@@ -8,7 +8,7 @@ namespace FilmCatalogue
 {
     public class Film : Title
     {
-        public int ?length;
+        public int? length;
         public Film(string name, int length, double rating)
         {
             this.name = name;

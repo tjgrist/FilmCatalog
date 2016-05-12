@@ -8,5 +8,8 @@ namespace FilmCatalogue
 {
     class User
     {
+        //user options
+        //add title;
+        //
     }
 }

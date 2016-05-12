@@ -21,7 +21,6 @@ namespace FilmCatalogue
                     yield return "Rating: " + t.Rating + "\n";
                 }
             }
-            Console.WriteLine();
         }
         public void setGenres()
         {
@@ -33,7 +32,7 @@ namespace FilmCatalogue
             genreList.Add(action);
             genreList.Add(romance);
             genreList.Add(allGenres);
-            Console.WriteLine("Genres set. All titles count: " + allGenres.genreTitles.Count + "\n");
+            Console.WriteLine("Genres set. Titles available: " + allGenres.genreTitles.Count + "\n");
         }
   
         public void makeNewGenre(string name, int Index1, int Index2)
@@ -44,7 +43,7 @@ namespace FilmCatalogue
         }
         public void viewNewGenre(Genre newGenre)
         {
-            Console.WriteLine(newGenre.name);
+            Console.WriteLine("\nMade new Genre: " + newGenre.name);
             foreach(var title in newGenre)
             {
                 Console.WriteLine(title);
@@ -53,6 +52,7 @@ namespace FilmCatalogue
         public void addTitleToGenre(Genre genre1, Genre genre2)
         {
             genre1.genreTitles = genre1 + genre2.genreTitles[4];
+            Console.WriteLine("Added {0} to {1}.",genre2.genreTitles[4], genre1.name);
         }
         public void aggregateTitles()
         {
@@ -69,8 +69,8 @@ namespace FilmCatalogue
             Title comedy3 = new Film("Anchorman", 115, 4.6);
             Title comedy4 = new Film("Ace Ventura", 140, 4.8);
             Title comedy5 = new Film("Hot Tub Time Machine", 137, 3.5);
-            Title comedy6 = new Show("Always Sunny in Philadelphia", 4.5, show.getEpisodesList("sunny"));
-            Title comedy7 = new Show("Archer", 4.2, show.getEpisodesList("archer"));
+            Title comedy6 = new Show("Always Sunny in Philadelphia", show.getEpisodesList("sunny"));
+            Title comedy7 = new Show("Archer", show.getEpisodesList("archer"));
             comedyTitles.Add(comedy1);
             comedyTitles.Add(comedy2);
             comedyTitles.Add(comedy3);
@@ -89,7 +89,7 @@ namespace FilmCatalogue
             Title action3 = new Film("Predator", 150, 4.1);
             Title action4 = new Film("Avengers", 110, 3.3);
             Title action5 = new Film("Star Wars", 115, 5.0);
-            Title action6 = new Show("Heroes", 4.5, show.getEpisodesList("heroes"));
+            Title action6 = new Show("Heroes", show.getEpisodesList("heroes"));
             actionTitles.Add(action1);
             actionTitles.Add(action2);
             actionTitles.Add(action3);
@@ -108,7 +108,8 @@ namespace FilmCatalogue
             Title romance4 = new Film("Moonrise Kingdom", 140, 3.3);
             Title romance5 = new Film("Casablanca", 136, 3.6);
             Title romance6 = new Film("Punch Drunk Love", 150, 3.9);
-            Title romance7 = new Show("Bones", 4.0, show.getEpisodesList("bones"));
+            Title romance7 = new Show("Bones", show.getEpisodesList("bones"));
+            Title romance8 = new Show("Sex & the City", show.getEpisodesList("city"));
             romanceTitles.Add(romance1);
             romanceTitles.Add(romance2);
             romanceTitles.Add(romance3);
@@ -116,6 +117,7 @@ namespace FilmCatalogue
             romanceTitles.Add(romance5);
             romanceTitles.Add(romance6);
             romanceTitles.Add(romance7);
+            romanceTitles.Add(romance8);
             return romanceTitles;
         }
         public List<Title> getAllTitles()
