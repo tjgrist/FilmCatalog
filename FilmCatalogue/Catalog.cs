@@ -22,9 +22,25 @@ namespace FilmCatalogue
                 }
             }
         }
+        public List<Title> ComedyTitles
+        {
+            get { return getComedyTitles(); }
+        }
+        public List<Title> ActionTitles
+        {
+            get { return getActionTitles(); }
+        }
+        public List<Title> RomanceTitles
+        {
+            get { return getRomanceTitles(); }
+        }
+        public List<Title> AllTitles
+        {
+            get { return getAllTitles(); }
+        }
         public void setGenres()
         {
-            Genre comedy = new Genre("Comedy", getComedyTitles());
+            Genre comedy = new Genre("Comedy", ComedyTitles);
             Genre action = new Genre("Action", getActionTitles());
             Genre romance = new Genre("Romance", getRomanceTitles());
             Genre allGenres = new Genre("All", getAllTitles());
@@ -47,12 +63,12 @@ namespace FilmCatalogue
         {
             Genre newGenre = genreList[index1] + genreList[index2];
             genreList.Add(newGenre);
-            viewNewGenre(newGenre);
         }
-        public void viewNewGenre(Genre newGenre)
+        public void viewNewGenre()
         {
-            Console.WriteLine("\nMade new Genre: " + newGenre.name);
-            foreach(var title in newGenre)
+            Genre newestGenre = genreList.Last();
+            Console.WriteLine("\nMade new Genre: " + newestGenre.name);
+            foreach(var title in newestGenre)
             {
                 Console.WriteLine(title);
             }
@@ -60,16 +76,16 @@ namespace FilmCatalogue
         public void addTitleToGenre(Genre genre1, Genre genre2)
         {
             genre1.genreTitles = genre1 + genre2.genreTitles[4];
-            Console.WriteLine("Added {0} to {1}.",genre2.genreTitles[4], genre1.name);
+            Console.WriteLine("Added '{0}' to {1}.",genre2.genreTitles[4], genre1.name);
         }
         public void aggregateTitles()
         {
             Genre customGenre = genreList[1].genreTitles[0] + genreList[0].genreTitles[3];
             genreList.Add(customGenre);
-            viewNewGenre(customGenre);
+            viewNewGenre();
             viewGenres();
         }
-        public List<Title> getComedyTitles()
+        private List<Title> getComedyTitles()
         {
             Show show = new Show();
             List<Title> comedyTitles = new List<Title>();
@@ -129,7 +145,7 @@ namespace FilmCatalogue
             romanceTitles.Add(romance8);
             return romanceTitles;
         }
-        public List<Title> getAllTitles()
+        private List<Title> getAllTitles()
         {
             List<Title> allTitles = new List<Title>();
             foreach(Title c in getComedyTitles())

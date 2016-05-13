@@ -11,5 +11,17 @@ namespace FilmCatalogue
         //user options
         //add title;
         //
+        public void viewCatalog(Catalog catalog)
+        {
+            foreach(var genreAndTitle in catalog)
+            {
+                Console.WriteLine(genreAndTitle);
+            }          
+        }
+        public void makeNewGenre()
+        {
+
+        }
+
     }
 }

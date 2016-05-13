@@ -53,6 +53,12 @@
     <Compile Include="CatalogueTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FilmCatalogue\FilmCatalogue.csproj">
+      <Project>{1048d8b5-f888-4702-ad3d-63fc95e8fc83}</Project>
+      <Name>FilmCatalogue</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

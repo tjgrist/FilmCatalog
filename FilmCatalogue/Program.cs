@@ -18,6 +18,7 @@ namespace FilmCatalogue
                 Console.WriteLine(c);
             }          
             Console.WriteLine("<<<<<<<<<<<<<< make a new genre >>>>>>>>>>>>>");
+
             Console.ReadKey();
             catalog.makeNewGenre("Action Comedy", 0, 1);
             Console.ReadKey();
@@ -26,14 +27,14 @@ namespace FilmCatalogue
                 Console.WriteLine(c);
             }
             Console.ReadKey();
-            //catalog.addTitleToGenre(catalog.genreList[2], catalog.genreList[1]);
-            //catalog.viewGenreTitles();
-            //Console.ReadKey();
-            //catalog.aggregateTitles();
-            //foreach (var c in catalog)
-            //{
-            //    Console.WriteLine(c);
-            //}
+            catalog.addTitleToGenre(catalog.genreList[2], catalog.genreList[1]);
+
+            Console.ReadKey();           
+            catalog.aggregateTitles(); //combine two titles and return a new custom genre
+            foreach (var c in catalog)
+            {
+                Console.WriteLine(c);
+            }
             Console.ReadKey();
         }
     }
