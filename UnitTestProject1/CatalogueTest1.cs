@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Collections.Generic;
 using FilmCatalogue;
 
 namespace UnitTestProject1
@@ -7,12 +8,11 @@ namespace UnitTestProject1
     [TestClass]
     public class CatalogueTest1
     {
-        
+        Catalog catalog = new Catalog();
         [TestMethod]
         public void TestThatSettingGenres_setsGenres()
         {
             //arrange
-            Catalog catalog = new Catalog();
             Genre genre = new Genre();
             //act
             catalog.setGenres();
@@ -26,9 +26,7 @@ namespace UnitTestProject1
         public void TestMakeNewGenre()
         {
             //arrange
-            Catalog catalog = new Catalog();
             catalog.setGenres();
-            catalog.makeNewGenre("test", 3, 1);
             string genreName = "Rom Com";
             int index1 = 2;
             int index2 = 0;
@@ -40,9 +38,19 @@ namespace UnitTestProject1
             Assert.AreEqual(expectedGenreCount, genreCount);
         }
         [TestMethod]
+        public void TestMakingGenresFail()
+        {
+            catalog.setGenres();
+            string genreName = "Some Name";
+            int index1 = 2;
+            int index2 = 0;
+            int expectedGenreCount = catalog.genreList.Count + 1;
+            catalog.makeNewGenre(genreName, 5, 7);
+            Assert.Fail();
+        }
+        [TestMethod]
         public void TestSetGenresCount()
         {
-            Catalog catalog = new Catalog();
             int expectedGenreCount = 4;
 
             catalog.setGenres();
@@ -52,7 +60,6 @@ namespace UnitTestProject1
         [TestMethod]
         public void TestViewGenres()
         {
-            Catalog catalog = new Catalog();
             catalog.setGenres();
 
             catalog.viewGenres(); //How do you assert void and printing functions?
@@ -60,7 +67,6 @@ namespace UnitTestProject1
         [TestMethod]
         public void TestViewNewGenre()
         {
-            Catalog catalog = new Catalog();
             catalog.setGenres();
 
             catalog.makeNewGenre("TestGenre", 0, 1);
@@ -70,12 +76,46 @@ namespace UnitTestProject1
         [TestMethod]
         public void TestAddTitleMethod()
         {
-            Catalog catalog = new Catalog();
             catalog.setGenres();
             Genre TestGenre = new Genre("test1", catalog.ComedyTitles);
             Genre Test2Genre = new Genre("test2", catalog.ActionTitles);
 
             catalog.addTitleToGenre(TestGenre, Test2Genre);
+        }
+        [TestMethod]
+        public void TestAggregateTitles()
+        {
+            catalog.setGenres();
+
+            catalog.aggregateTitles();
+        }
+        [TestMethod]
+        public void TestGetComedyTitlesMethod()
+        {
+            List<Title> titleList = new List<Title>();
+            
+            ReferenceEquals(catalog.ComedyTitles, titleList.GetType());          
+        }
+        [TestMethod]
+        public void TestGetActionTitlesMethod()
+        {
+            List<Title> titleList = new List<Title>();
+
+            ReferenceEquals(catalog.ActionTitles, titleList.GetType());
+        }
+        [TestMethod]
+        public void TestGetRomanceTitlesMethod()
+        {
+            List<Title> titleList = new List<Title>();
+
+            ReferenceEquals(catalog.RomanceTitles, titleList.GetType());
+        }
+        [TestMethod]
+        public void TestGetAllTitlesMethod()
+        {
+            List<Title> titleList = new List<Title>();
+
+            ReferenceEquals(catalog.AllTitles, titleList.GetType());
         }
     }
 }

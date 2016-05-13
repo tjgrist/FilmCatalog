@@ -32,11 +32,11 @@ Genre
 		o	Take in a title, add it to the genre, return an aggregated list. **
 		o	For example, title Die Hard and genre Comedy would return a list of all comedy films and Die Hard. **
 -	Create the genres: All, Romance, Action, Comedy. They need to share some titles (such as Romantic Comedies) by reference, 
-not by duplicating the title itself.  
+not by duplicating the title itself.  ***
 
 Other project requirements:
 -	Utilize the null operators we covered in class
--	Utilize appropriate access modifiers
+-	Utilize appropriate access modifiers ***
 -	Create at least 5 unit tests
 -	Show the program in use. Essentially, there needs to be data, run the program, and print to the console to show that the program works. 
 
