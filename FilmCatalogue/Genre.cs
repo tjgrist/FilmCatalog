@@ -20,7 +20,6 @@ namespace FilmCatalogue
         //
         public Genre()
         {
-
         }
 
         public IEnumerator GetEnumerator()

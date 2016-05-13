@@ -49,7 +49,6 @@ namespace FilmCatalogue
             genreList.Add(action);
             genreList.Add(romance);
             genreList.Add(allGenres);
-            viewGenres();
         }
         public void viewGenres()
         {
@@ -60,10 +59,11 @@ namespace FilmCatalogue
             }
             Console.WriteLine("Titles available: " + genreList[3].genreTitles.Count);
         }
-        public void makeNewGenre(string name, int index1, int index2)
+        public void makeNewGenre(int index1, int index2)
         {
             Genre newGenre = genreList[index1] + genreList[index2];
             genreList.Add(newGenre);
+            Console.WriteLine("<<<<<<<<<<<<<< made a new genre >>>>>>>>>>>>>");
         }
         public void viewNewGenre()
         {

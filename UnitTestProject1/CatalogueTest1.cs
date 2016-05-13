@@ -27,12 +27,11 @@ namespace UnitTestProject1
         {
             //arrange
             catalog.setGenres();
-            string genreName = "Rom Com";
             int index1 = 2;
             int index2 = 0;
             int expectedGenreCount = catalog.genreList.Count + 1;
             //act
-            catalog.makeNewGenre(genreName, index1, index2);
+            catalog.makeNewGenre(index1, index2);
             int genreCount = catalog.genreList.Count;
             //asert
             Assert.AreEqual(expectedGenreCount, genreCount);
@@ -41,12 +40,8 @@ namespace UnitTestProject1
         public void TestMakingGenresFail()
         {
             catalog.setGenres();
-            string genreName = "Some Name";
-            int index1 = 2;
-            int index2 = 0;
-            int expectedGenreCount = catalog.genreList.Count + 1;
-            catalog.makeNewGenre(genreName, 5, 7);
-            Assert.Fail();
+            catalog.makeNewGenre(5, 7);
+            throw new ArgumentOutOfRangeException();
         }
         [TestMethod]
         public void TestSetGenresCount()
@@ -69,7 +64,7 @@ namespace UnitTestProject1
         {
             catalog.setGenres();
 
-            catalog.makeNewGenre("TestGenre", 0, 1);
+            catalog.makeNewGenre(0, 1);
 
             catalog.viewNewGenre();
         }
