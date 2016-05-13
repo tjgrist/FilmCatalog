@@ -32,10 +32,10 @@ namespace FilmCatalogue
         {
             return name + "\nEpisodes: " + episodesList.Count;
         }
-        public List<Episodes> getEpisodesList(string name)
+        public List<Episodes> getEpisodesList(string showName)
         {
             List<Episodes> episodes = new List<Episodes>();
-            switch (name)
+            switch (showName)
             {
                 case "archer":
                     Episodes episode1 = new Episodes(4.4);
