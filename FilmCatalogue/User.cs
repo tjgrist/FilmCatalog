@@ -24,7 +24,7 @@ namespace FilmCatalogue
             while (option)
             {
                 printOptions();
-                string choice = Console.ReadLine();
+                string choice = Console.ReadLine().ToUpper();
                 switch (choice)
                 {
                     case "1":
@@ -39,6 +39,12 @@ namespace FilmCatalogue
                     case "4":
                         viewNewGenre();
                         break;
+                    case "5":
+                        makeAggregateTitlesGenre();
+                        break;
+                    case "6":
+                        viewCertainGenre();
+                        break;
                     case "Q":
                         option = false;
                         break;
@@ -48,7 +54,8 @@ namespace FilmCatalogue
         private void printOptions()
         {
             Console.WriteLine("Enter 1 to view theh Genres.\nEnter 2 to view the catalog.\nEnter 3 to aggregate a genre."
-                + "\nEnter 4 to view your new Genre.\nEnter Q to quit.");
+                + "\nEnter 4 to view your new Genre.\nEnter 5 to make an aggregated genre from two titles.\n"
+                + "Enter 6 to view a certain genre.\nEnter Q to quit.");
         }
         private void viewGenres()
         {
@@ -74,6 +81,21 @@ namespace FilmCatalogue
         public void viewNewGenre()
         {
             catalog.viewNewGenre();
+        }
+        public void makeAggregateTitlesGenre()
+        {
+            catalog.aggregateTitles();
+            //Console.WriteLine("Enter the name of 1st title you want to add.");
+            //string title = Console.ReadLine();
+            //int t = catalog.genreList[1].genreTitles[2].FindIndex(x => x.name == title);
+            //Console.WriteLine("Enter the name of 1st title you want to add.");
+            //string title2 = Console.ReadLine();
+            //catalog.aggregateTitles(title, title2);
+        }
+        public void viewCertainGenre()
+        {
+            catalog.viewGenres();
+            catalog.showGenreOptions();
         }
     }
 }

@@ -63,7 +63,7 @@ namespace FilmCatalogue
         {
             Genre newGenre = genreList[index1] + genreList[index2];
             genreList.Add(newGenre);
-            Console.WriteLine("<<<<<<<<<<<<<< made a new genre >>>>>>>>>>>>>");
+            Console.WriteLine("<<<<<<<<<<<< Created a new genre >>>>>>>>>>>>");
         }
         public void viewNewGenre()
         {
@@ -81,10 +81,54 @@ namespace FilmCatalogue
         }
         public void aggregateTitles()
         {
-            Genre customGenre = genreList[1].genreTitles[0] + genreList[0].genreTitles[3];
+            Random r = new Random();
+            int indx1 = r.Next(0, genreList.Count);
+            int indx2 = r.Next(0, genreList.Count);
+            int indxTitle = r.Next(0, 5);
+            Title title1 = genreList[indx1].genreTitles[indxTitle];
+            Title title2 = genreList[indx2].genreTitles[indxTitle];
+            Genre customGenre = title1 + title2;          
+            Console.WriteLine("<<<<<<<<<<<<< Created a new genre '{0}' from two titles >>>>>>>>>>>>>",customGenre.name);
             genreList.Add(customGenre);
-            viewNewGenre();
-            viewGenres();
+        }
+        public void showGenreOptions()
+        {
+            int count = 0;
+            foreach (Genre g in genreList)
+            {
+                Console.WriteLine("Enter {0} to see {1}", count, g.name);
+                count++;
+            }
+            int indx = getUserGenre();
+            showSpecificGenre(indx);
+        }
+        private int getUserGenre()
+        {
+            string genre = Console.ReadLine();
+            try
+            {
+                int indx = Convert.ToInt32(genre);
+                return indx;
+            }
+            catch (FormatException)
+            {
+            }
+            return getUserGenre();
+        }
+        private void showSpecificGenre(int indx)
+        {
+            if (indx > genreList.Count)
+            {
+                Console.WriteLine("Index out of range");
+                showGenreOptions();
+            }
+            else
+            {
+                foreach (var title in genreList[indx])
+                {
+                    Console.WriteLine(title);
+                }
+            }
         }
         private List<Title> getComedyTitles()
         {
@@ -116,12 +160,14 @@ namespace FilmCatalogue
             Title action4 = new Film("Avengers", 110, 3.3);
             Title action5 = new Film("Star Wars", 115, 5.0);
             Title action6 = new Show("Heroes", show.getEpisodesList("heroes"));
+            Title action7 = new Show("Homeland", show.getEpisodesList("homeland"));
             actionTitles.Add(action1);
             actionTitles.Add(action2);
             actionTitles.Add(action3);
             actionTitles.Add(action4);
             actionTitles.Add(action5);
             actionTitles.Add(action6);
+            actionTitles.Add(action7);
             return actionTitles;
         }
         private List<Title> getRomanceTitles()

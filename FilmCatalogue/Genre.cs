@@ -17,11 +17,9 @@ namespace FilmCatalogue
             this.name = name.ToUpper();
             genreTitles = titleList;
         }
-        //
         public Genre()
         {
         }
-
         public IEnumerator GetEnumerator()
         {
             foreach(Title t in genreTitles)
