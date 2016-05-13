@@ -119,7 +119,7 @@ namespace FilmCatalogue
         {
             if (indx > genreList.Count)
             {
-                Console.WriteLine("Index out of range");
+                Console.WriteLine("Index out of range.\n");
                 showGenreOptions();
             }
             else

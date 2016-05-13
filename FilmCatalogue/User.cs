@@ -45,6 +45,7 @@ namespace FilmCatalogue
                     case "6":
                         viewCertainGenre();
                         break;
+                        //add specific title to a genre;
                     case "Q":
                         option = false;
                         break;
@@ -68,7 +69,7 @@ namespace FilmCatalogue
                 Console.WriteLine(genreAndTitle);
             }          
         }
-        public void makeNewGenre()
+        private void makeNewGenre()
         {
             Console.WriteLine("Enter the 1st genre you'd like to aggregate.");
             string name = Console.ReadLine().ToUpper();
@@ -78,11 +79,11 @@ namespace FilmCatalogue
             int index2 = catalog.genreList.FindIndex(x => x.name == name2);
             catalog.makeNewGenre(index, index2);
         }
-        public void viewNewGenre()
+        private void viewNewGenre()
         {
             catalog.viewNewGenre();
         }
-        public void makeAggregateTitlesGenre()
+        private void makeAggregateTitlesGenre()
         {
             catalog.aggregateTitles();
             //Console.WriteLine("Enter the name of 1st title you want to add.");
@@ -92,7 +93,7 @@ namespace FilmCatalogue
             //string title2 = Console.ReadLine();
             //catalog.aggregateTitles(title, title2);
         }
-        public void viewCertainGenre()
+        private void viewCertainGenre()
         {
             catalog.viewGenres();
             catalog.showGenreOptions();
