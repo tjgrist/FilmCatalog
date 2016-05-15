@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FilmCatalogue
 {
-    class User
+    public class User
     {
         Catalog catalog;
         public User(Catalog catalog)
@@ -15,9 +15,6 @@ namespace FilmCatalogue
             catalog.setGenres();
             showUserOptions();
         }
-        //user options
-        //add title;
-        //
         private void showUserOptions()
         {
             bool option = true;
@@ -45,7 +42,9 @@ namespace FilmCatalogue
                     case "6":
                         viewCertainGenre();
                         break;
-                        //add specific title to a genre;
+                    case "7":
+                        addTitle();
+                        break;
                     case "Q":
                         option = false;
                         break;
@@ -54,9 +53,10 @@ namespace FilmCatalogue
         }
         private void printOptions()
         {
-            Console.WriteLine("Enter 1 to view theh Genres.\nEnter 2 to view the catalog.\nEnter 3 to aggregate a genre."
-                + "\nEnter 4 to view your new Genre.\nEnter 5 to make an aggregated genre from two titles.\n"
-                + "Enter 6 to view a certain genre.\nEnter Q to quit.");
+            Console.WriteLine("Enter 1 to view the Genres.\nEnter 2 to view the catalog.\n"
+                + "Enter 3 to aggregate a genre.\nEnter 4 to view your new Genre."
+                + "\nEnter 5 to make an aggregated genre from two titles.\nEnter 6 to view a certain genre."
+                + "\nEnter 7 to add a title to another Genre.\nEnter Q to quit.");
         }
         private void viewGenres()
         {
@@ -73,11 +73,11 @@ namespace FilmCatalogue
         {
             Console.WriteLine("Enter the 1st genre you'd like to aggregate.");
             string name = Console.ReadLine().ToUpper();
-            Console.WriteLine("Enter the 1st genre you'd like to aggregate.");
+            Console.WriteLine("Enter the 2nd genre you'd like to aggregate.");
             string name2 = Console.ReadLine().ToUpper();
-            int index = catalog.genreList.FindIndex(x => x.name == name);
-            int index2 = catalog.genreList.FindIndex(x => x.name == name2);
-            catalog.makeNewGenre(index, index2);
+            int? index = catalog.genreList.FindIndex(x => x.name == name);
+            int? index2 = catalog.genreList.FindIndex(x => x.name == name2);
+            catalog.makeNewGenre((int)index, (int)index2);
         }
         private void viewNewGenre()
         {
@@ -97,6 +97,29 @@ namespace FilmCatalogue
         {
             catalog.viewGenres();
             catalog.showGenreOptions();
+        }
+        private void addTitle()
+        {
+            Console.WriteLine("Enter the genre that has the title you want to add.");
+            string name = Console.ReadLine().ToUpper();
+            Genre genre1 = catalog.genreList.Find(x => x.name == name);
+            if (genre1 != null)
+            {
+                Console.WriteLine("What's the title?");
+                string title = Console.ReadLine();
+                Title title1 = genre1.genreTitles.Find(x => x.name == title);
+                if (title1 != null)
+                {
+                    Console.WriteLine("Enter the genre you'd like to add {0} to.", title1.name);
+                    string name2 = Console.ReadLine().ToUpper();
+                    Genre genre2 = catalog.genreList.Find(x => x.name == name2);
+                    if (genre2 != null)
+                    {
+                        catalog.addTitleToGenre(genre2, title1);
+                    }
+                }
+            }
+            else { addTitle(); }
         }
     }
 }

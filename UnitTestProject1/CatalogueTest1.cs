@@ -9,6 +9,7 @@ namespace UnitTestProject1
     public class CatalogueTest1
     {
         Catalog catalog = new Catalog();
+
         [TestMethod]
         public void TestThatSettingGenres_setsGenres()
         {
@@ -73,9 +74,10 @@ namespace UnitTestProject1
         {
             catalog.setGenres();
             Genre TestGenre = new Genre("test1", catalog.ComedyTitles);
-            Genre Test2Genre = new Genre("test2", catalog.ActionTitles);
+            Title TestTitle = new Film("teststring", 120, 3.6);
 
-            catalog.addTitleToGenre(TestGenre, Test2Genre);
+            catalog.addTitleToGenre(TestGenre, TestTitle);
+            //assert
         }
         [TestMethod]
         public void TestAggregateTitles()

@@ -9,9 +9,8 @@ namespace FilmCatalogue
     class Program
     {
         static void Main(string[] args)
-        {         
+        {
             User user = new User(new Catalog());
-            Console.ReadKey();
         }
     }
 }

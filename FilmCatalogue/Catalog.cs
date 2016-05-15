@@ -63,7 +63,7 @@ namespace FilmCatalogue
         {
             Genre newGenre = genreList[index1] + genreList[index2];
             genreList.Add(newGenre);
-            Console.WriteLine("<<<<<<<<<<<< Created a new genre >>>>>>>>>>>>");
+            Console.WriteLine("\n<<<<<<<<<<<< Created a new genre >>>>>>>>>>>>\n");
         }
         public void viewNewGenre()
         {
@@ -74,10 +74,10 @@ namespace FilmCatalogue
                 Console.WriteLine(title);
             }
         }
-        public void addTitleToGenre(Genre genre1, Genre genre2)
+        public void addTitleToGenre(Genre genre1, Title title1)
         {
-            genre1.genreTitles = genre1 + genre2.genreTitles[4];
-            Console.WriteLine("Added '{0}' to {1}.",genre2.genreTitles[4], genre1.name);
+            genre1.genreTitles = genre1 + title1;
+            Console.WriteLine("Added '{0}' to {1}.",title1.name, genre1.name);
         }
         public void aggregateTitles()
         {
@@ -119,7 +119,7 @@ namespace FilmCatalogue
         {
             if (indx > genreList.Count)
             {
-                Console.WriteLine("Index out of range.\n");
+                Console.WriteLine("\nIndex out of range.\n");
                 showGenreOptions();
             }
             else

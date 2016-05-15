@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using FilmCatalogue;
+using System.Collections.Generic;
 
 namespace UnitTestProject1
 {
@@ -19,7 +20,17 @@ namespace UnitTestProject1
             Assert.AreNotEqual(genre1, newGenre.GetType());
             ReferenceEquals(newGenre, genre1);
         }
-        //[TestMethod]
-        //public void Test
+        [TestMethod]
+        public void TestAddTitleToGenre()
+        {
+            catalog.setGenres();
+            Genre one = catalog.genreList[0];
+            Title title3 = new Film("Taken", 120, 3.5);
+            List<Title> list = one.genreTitles;
+
+            list = one + title3;
+
+            Assert.AreEqual(one.genreTitles, list);
+        }
     }
 }
