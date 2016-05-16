@@ -93,7 +93,7 @@ namespace FilmCatalogue
             int count = 1;
             for(int i = 0; i < 2; i++)
             {
-                Console.WriteLine("Enter the Genre #{0} that has the title:", count);
+                Console.WriteLine("Enter Genre #{0} that has the title:", count);
                 string stringGenre = Console.ReadLine().ToUpper();
                 Genre genre = catalog.genreList.Find(x => x.name == stringGenre);
                 if (genre != null)
@@ -101,19 +101,18 @@ namespace FilmCatalogue
                     Console.WriteLine("Enter the name of the title:");
                     string stringTitle = Console.ReadLine();
                     Title title = genre.genreTitles.Find(x => x.name == stringTitle);
-                    titles.Add(title);
-                    Console.WriteLine("Added.");
-                    count++;
+                    if (title != null)
+                    {
+                        titles.Add(title);
+                        count++;
+                    }
+                    else { Console.WriteLine("Try again!"); makeAggregateTitlesGenre(); }
                 }
-                else { Console.WriteLine("Try again!"); makeAggregateTitlesGenre(); }
+                else { Console.WriteLine("Try again!!"); makeAggregateTitlesGenre(); }
             }
-            if (titles[0] != null && titles[1] != null)
-            {
-                Console.WriteLine("Enter a name for the new Genre:");
-                string genreName = Console.ReadLine().ToUpper();
-                catalog.aggregateTitles(titles[0], titles[1], genreName);
-            }
-            else { Console.WriteLine("You must have misentered a title. Try again."); makeAggregateTitlesGenre(); }
+            Console.WriteLine("Enter a name for the new Genre:");
+            string genreName = Console.ReadLine().ToUpper();
+            catalog.aggregateTitles(titles[0], titles[1], genreName);
         }
         private void viewCertainGenre()
         {

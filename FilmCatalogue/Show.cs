@@ -24,7 +24,7 @@ namespace FilmCatalogue
                 {
                     averageRating += (double)e.rating;
                 }
-                rating = averageRating / episodesList.Count;
+                rating = Math.Round(averageRating / episodesList.Count, 2);
                 return (double)rating;
             }
         }

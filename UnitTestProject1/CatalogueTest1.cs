@@ -28,23 +28,15 @@ namespace UnitTestProject1
         {
             //arrange
             catalog.setGenres();
-            Genre g1 = catalog.genreList[0];
-            Genre g2 = catalog.genreList[1];
+            Random rand = new Random();
+            Genre g1 = catalog.genreList[rand.Next(0,1)];
+            Genre g2 = catalog.genreList[rand.Next(2,3)];
             int expectedGenreCount = catalog.genreList.Count + 1;
             //act
             catalog.makeNewGenre(g1, g2);
             int genreCount = catalog.genreList.Count;
             //asert
             Assert.AreEqual(expectedGenreCount, genreCount);
-        }
-        [TestMethod]
-        public void TestMakingGenresFail()
-        {
-            catalog.setGenres();
-            Genre g1 = catalog.genreList[0];
-            Genre g2 = catalog.genreList[1];
-            catalog.makeNewGenre(g1, g2);
-            throw new ArgumentOutOfRangeException();
         }
         [TestMethod]
         public void TestSetGenresCount()
