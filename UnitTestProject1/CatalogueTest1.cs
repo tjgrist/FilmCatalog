@@ -88,7 +88,7 @@ namespace UnitTestProject1
             catalog.setGenres();
             Title title1 = new Film("name", 120, 3.5);
             Title title2 = new Film("name", 125, 4.5);
-            catalog.aggregateTitles(title1, title2);
+            catalog.aggregateTitles(title1, title2, "Testname");
         }
         [TestMethod]
         public void TestGetComedyTitlesMethod()
