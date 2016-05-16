@@ -75,8 +75,8 @@ namespace FilmCatalogue
             string name = Console.ReadLine().ToUpper();
             Console.WriteLine("Enter the 2nd genre you'd like to aggregate.");
             string name2 = Console.ReadLine().ToUpper();
-            Genre genre1 = catalog.genreList.Find(x => x.name == name);
-            Genre genre2 = catalog.genreList.Find(x => x.name == name2);
+            Genre genre1 = catalog.genreList.Find(g => g.name == name);
+            Genre genre2 = catalog.genreList.Find(g => g.name == name2);
             if (genre1 != null && genre2 != null)
             {
                 catalog.makeNewGenre(genre1, genre2);
@@ -92,25 +92,27 @@ namespace FilmCatalogue
             //write this as two loops;
             Console.WriteLine("Which genre is the 1st title in?.");
             string stringGenre = Console.ReadLine().ToUpper();
-            Genre genre1 = catalog.genreList.Find(x => x.name == stringGenre);
+            Genre genre1 = catalog.genreList.Find(g => g.name == stringGenre);
             if (genre1 != null)
             {
                 Console.WriteLine("Enter the name of the title.");
                 string stringTitle = Console.ReadLine();
-                Title title1 = genre1.genreTitles.Find(x => x.name == stringTitle);
+                Title title1 = genre1.genreTitles.Find(t => t.name == stringTitle);
                 if (title1 != null)
                 {
                     Console.WriteLine("Which genre is the 2nd title in?.");
                     string stringGenre2 = Console.ReadLine().ToUpper();
-                    Genre genre2 = catalog.genreList.Find(x => x.name == stringGenre2);
+                    Genre genre2 = catalog.genreList.Find(g => g.name == stringGenre2);
                     if (genre2 != null)
                     {
                         Console.WriteLine("Enter the name of 2nd title.");
                         string stringTitle2 = Console.ReadLine();
-                        Title title2 = genre2.genreTitles.Find(x => x.name == stringTitle2);
+                        Title title2 = genre2.genreTitles.Find(t => t.name == stringTitle2);
                         if (title2 != null)
                         {
-                            catalog.aggregateTitles(title1, title2);
+                            Console.WriteLine("Enter a name for the new Genre:");
+                            string genreName = Console.ReadLine().ToUpper();
+                            catalog.aggregateTitles(title1, title2, genreName);
                         }
                     }
                 }
@@ -126,17 +128,17 @@ namespace FilmCatalogue
         {
             Console.WriteLine("Enter the genre that has the title you want to add.");
             string name = Console.ReadLine().ToUpper();
-            Genre genre1 = catalog.genreList.Find(x => x.name == name);
+            Genre genre1 = catalog.genreList.Find(g => g.name == name);
             if (genre1 != null)
             {
                 Console.WriteLine("What's the title?");
                 string title = Console.ReadLine();
-                Title title1 = genre1.genreTitles.Find(x => x.name == title);
+                Title title1 = genre1.genreTitles.Find(t => t.name == title);
                 if (title1 != null)
                 {
                     Console.WriteLine("Enter the genre you'd like to add {0} to.", title1.name);
                     string name2 = Console.ReadLine().ToUpper();
-                    Genre genre2 = catalog.genreList.Find(x => x.name == name2);
+                    Genre genre2 = catalog.genreList.Find(g => g.name == name2);
                     if (genre2 != null)
                     {
                         catalog.addTitleToGenre(genre2, title1);

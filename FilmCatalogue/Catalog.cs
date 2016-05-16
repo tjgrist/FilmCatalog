@@ -79,10 +79,11 @@ namespace FilmCatalogue
             genre1.genreTitles = genre1 + title1;
             Console.WriteLine("Added '{0}' to {1}.",title1.name, genre1.name);
         }
-        public void aggregateTitles(Title title1, Title title2)
+        public void aggregateTitles(Title title1, Title title2, string genreName)
         {
-            Genre customGenre = title1 + title2;          
-            Console.WriteLine("<<<<<<<<<<<<< Created a new genre '{0}' from two titles >>>>>>>>>>>>>",customGenre.name);
+            Genre customGenre = title1 + title2;
+            customGenre.name = genreName;          
+            Console.WriteLine("<<<<<<<<<<<<< Created a new genre '{0}' from two titles >>>>>>>>>>>>>", customGenre.name);
             genreList.Add(customGenre);
         }
         public void showGenreOptions()

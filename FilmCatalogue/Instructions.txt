@@ -54,9 +54,3 @@ IEnumerable and IEnumerator
 Null operators
 properties
 unit tests
-
-//Make catalog class iterate through the genres
-//should contain list of genres
-//Make Genre class have 
-//Genre class could have lists of titles;
-// Could have Title list instaniated based on its genre
