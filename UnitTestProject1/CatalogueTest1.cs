@@ -28,11 +28,11 @@ namespace UnitTestProject1
         {
             //arrange
             catalog.setGenres();
-            int index1 = 2;
-            int index2 = 0;
+            Genre g1 = catalog.genreList[0];
+            Genre g2 = catalog.genreList[1];
             int expectedGenreCount = catalog.genreList.Count + 1;
             //act
-            catalog.makeNewGenre(index1, index2);
+            catalog.makeNewGenre(g1, g2);
             int genreCount = catalog.genreList.Count;
             //asert
             Assert.AreEqual(expectedGenreCount, genreCount);
@@ -41,7 +41,9 @@ namespace UnitTestProject1
         public void TestMakingGenresFail()
         {
             catalog.setGenres();
-            catalog.makeNewGenre(5, 7);
+            Genre g1 = catalog.genreList[0];
+            Genre g2 = catalog.genreList[1];
+            catalog.makeNewGenre(g1, g2);
             throw new ArgumentOutOfRangeException();
         }
         [TestMethod]
@@ -64,8 +66,9 @@ namespace UnitTestProject1
         public void TestViewNewGenre()
         {
             catalog.setGenres();
-
-            catalog.makeNewGenre(0, 1);
+            Genre g1 = catalog.genreList[0];
+            Genre g2 = catalog.genreList[1];
+            catalog.makeNewGenre(g1, g2);
 
             catalog.viewNewGenre();
         }
@@ -83,8 +86,9 @@ namespace UnitTestProject1
         public void TestAggregateTitles()
         {
             catalog.setGenres();
-
-            catalog.aggregateTitles();
+            Title title1 = new Film("name", 120, 3.5);
+            Title title2 = new Film("name", 125, 4.5);
+            catalog.aggregateTitles(title1, title2);
         }
         [TestMethod]
         public void TestGetComedyTitlesMethod()

@@ -59,9 +59,9 @@ namespace FilmCatalogue
             }
             Console.WriteLine("Titles available: " + genreList[3].genreTitles.Count);
         }
-        public void makeNewGenre(int index1, int index2)
+        public void makeNewGenre(Genre genre1, Genre genre2)
         {
-            Genre newGenre = genreList[index1] + genreList[index2];
+            Genre newGenre = genre1 + genre2;
             genreList.Add(newGenre);
             Console.WriteLine("\n<<<<<<<<<<<< Created a new genre >>>>>>>>>>>>\n");
         }
@@ -79,14 +79,8 @@ namespace FilmCatalogue
             genre1.genreTitles = genre1 + title1;
             Console.WriteLine("Added '{0}' to {1}.",title1.name, genre1.name);
         }
-        public void aggregateTitles()
+        public void aggregateTitles(Title title1, Title title2)
         {
-            Random r = new Random();
-            int indx1 = r.Next(0, genreList.Count);
-            int indx2 = r.Next(0, genreList.Count);
-            int indxTitle = r.Next(0, 5);
-            Title title1 = genreList[indx1].genreTitles[indxTitle];
-            Title title2 = genreList[indx2].genreTitles[indxTitle];
             Genre customGenre = title1 + title2;          
             Console.WriteLine("<<<<<<<<<<<<< Created a new genre '{0}' from two titles >>>>>>>>>>>>>",customGenre.name);
             genreList.Add(customGenre);
@@ -113,6 +107,7 @@ namespace FilmCatalogue
             catch (FormatException)
             {
             }
+            Console.WriteLine("Try again.");
             return getUserGenre();
         }
         private void showSpecificGenre(int indx)

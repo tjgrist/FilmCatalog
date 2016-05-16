@@ -14,7 +14,7 @@ namespace FilmCatalogue
             this.name = name;
             episodesList = episodes;
         }
-        public Show() {}
+        public Show() { }
         public override double Rating
         {
             get
@@ -132,7 +132,10 @@ namespace FilmCatalogue
                     episodes.Add(episode41);
                     break;
                 default:
-                    break; //will break program;
+                    Episodes pilot = new Episodes(4.5);
+                    Episodes default1 = new Episodes(3.0);
+                    Episodes default2 = new Episodes(4.3);
+                    break;
             }
             return episodes;
         }
