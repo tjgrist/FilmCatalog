@@ -83,7 +83,7 @@ namespace FilmCatalogue
         {
             Genre customGenre = title1 + title2;
             customGenre.name = genreName;          
-            Console.WriteLine("<<<<<<<<<<<<< Created a new genre '{0}' from two titles >>>>>>>>>>>>>", customGenre.name);
+            Console.WriteLine("<<<<< Created a new genre '{0}' from two titles >>>>>", customGenre.name);
             genreList.Add(customGenre);
         }
         public void showGenreOptions()
@@ -113,7 +113,7 @@ namespace FilmCatalogue
         }
         private void showSpecificGenre(int indx)
         {
-            if (indx > genreList.Count)
+            if (indx + 1 > genreList.Count)
             {
                 Console.WriteLine("\nIndex out of range.\n");
                 showGenreOptions();
